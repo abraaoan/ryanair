@@ -57,6 +57,10 @@ class ABRequest: NSObject, URLSessionDelegate, URLSessionDataDelegate {
         // Set Method
         request.httpMethod = "GET"
         
+        // Default header
+        request.setValue("application/json", forHTTPHeaderField: "Content-type")
+        request.setValue("ios", forHTTPHeaderField: "client")
+        
         let params = makeParams(parameters)
         request.httpBody = params.data(using: .utf8)
         
@@ -75,9 +79,8 @@ class ABRequest: NSObject, URLSessionDelegate, URLSessionDataDelegate {
             
             // --- For Debug
 //            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue) ?? ""
+//            print("URL = \(request.url?.absoluteString ?? "-")")
 //            print("ResponseString = \(String(describing: responseString))")
-            
-            
             
             guard let statusCode = response?.getStatusCode(), (200...299).contains(statusCode) else {
                 let errorType: ErrorType

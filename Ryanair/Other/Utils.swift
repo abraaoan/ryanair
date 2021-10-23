@@ -41,4 +41,18 @@ class Utils: NSObject {
         }
         return locale.displayName(forKey: .currencySymbol, value: code)
     }
+    
+    //
+    
+    public static func getStringDateFormated(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEE, dd MMM"
+        return formatter.string(from: date)
+    }
+    
+    public static func getStringDateFormatedForURL(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.string(from: date)
+    }
 }

@@ -3,10 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10E6F0C2721EF7500C17DC4 /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E6F0B2721EF7500C17DC4 /* StationsViewController.swift */; };
+		A1459EF62721B3370047F9EF /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1459EF52721B3370047F9EF /* Availability.swift */; };
+		A1459EF82721B3930047F9EF /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1459EF72721B3930047F9EF /* Trip.swift */; };
+		A1459EFB2721B3FC0047F9EF /* TripDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1459EFA2721B3FC0047F9EF /* TripDate.swift */; };
+		A1459EFD2721B44B0047F9EF /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1459EFC2721B44B0047F9EF /* Flight.swift */; };
+		A1459F002721BCEF0047F9EF /* Stations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1459EFF2721BCEF0047F9EF /* Stations.swift */; };
+		A152BC7127233453000ABD99 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152BC7027233453000ABD99 /* CalendarViewController.swift */; };
+		A152BC7527233556000ABD99 /* DateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152BC7427233556000ABD99 /* DateCell.swift */; };
+		A152BC772723606A000ABD99 /* DateHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152BC762723606A000ABD99 /* DateHeader.swift */; };
+		A152BC7B272384AA000ABD99 /* PassengersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A152BC7A272384AA000ABD99 /* PassengersViewController.swift */; };
 		A1A6E03D2721820700689ADF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A6E03C2721820700689ADF /* AppDelegate.swift */; };
 		A1A6E03F2721820700689ADF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A6E03E2721820700689ADF /* SceneDelegate.swift */; };
 		A1A6E0412721820700689ADF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A6E0402721820700689ADF /* HomeViewController.swift */; };
@@ -19,6 +29,8 @@
 		A1A6E0732721831900689ADF /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A6E0722721831900689ADF /* Router.swift */; };
 		A1A6E0762721838800689ADF /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A6E0752721838800689ADF /* Utils.swift */; };
 		A1A6E078272191A100689ADF /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A6E077272191A100689ADF /* Services.swift */; };
+		A1BA7B792722D8A10069C832 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BA7B782722D8A00069C832 /* UIView.swift */; };
+		D5205940ECC9FA3B677AB558 /* Pods_Ryanair.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B63519871F6AFFACEF2919E /* Pods_Ryanair.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +51,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B63519871F6AFFACEF2919E /* Pods_Ryanair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ryanair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		484EC09CBB180E7E2571A21A /* Pods-Ryanair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ryanair.debug.xcconfig"; path = "Target Support Files/Pods-Ryanair/Pods-Ryanair.debug.xcconfig"; sourceTree = "<group>"; };
+		A10E6F0B2721EF7500C17DC4 /* StationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
+		A1459EF52721B3370047F9EF /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
+		A1459EF72721B3930047F9EF /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		A1459EFA2721B3FC0047F9EF /* TripDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDate.swift; sourceTree = "<group>"; };
+		A1459EFC2721B44B0047F9EF /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		A1459EFF2721BCEF0047F9EF /* Stations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stations.swift; sourceTree = "<group>"; };
+		A152BC7027233453000ABD99 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		A152BC7427233556000ABD99 /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
+		A152BC762723606A000ABD99 /* DateHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHeader.swift; sourceTree = "<group>"; };
+		A152BC7A272384AA000ABD99 /* PassengersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengersViewController.swift; sourceTree = "<group>"; };
 		A1A6E0392721820700689ADF /* Ryanair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ryanair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1A6E03C2721820700689ADF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1A6E03E2721820700689ADF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +81,8 @@
 		A1A6E0722721831900689ADF /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		A1A6E0752721838800689ADF /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A1A6E077272191A100689ADF /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		A1BA7B782722D8A00069C832 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		E46667D637E4EF4016E1E2D3 /* Pods-Ryanair.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ryanair.release.xcconfig"; path = "Target Support Files/Pods-Ryanair/Pods-Ryanair.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5205940ECC9FA3B677AB558 /* Pods_Ryanair.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +111,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		58F3E9B5196184BF5BF3576E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				484EC09CBB180E7E2571A21A /* Pods-Ryanair.debug.xcconfig */,
+				E46667D637E4EF4016E1E2D3 /* Pods-Ryanair.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7D62944FC80071726ADFBDC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B63519871F6AFFACEF2919E /* Pods_Ryanair.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A152BC7227233531000ABD99 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				A152BC732723353F000ABD99 /* Cells */,
+				A152BC7027233453000ABD99 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		A152BC732723353F000ABD99 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A152BC7427233556000ABD99 /* DateCell.swift */,
+				A152BC762723606A000ABD99 /* DateHeader.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A152BC782723847D000ABD99 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A1A6E0402721820700689ADF /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A152BC7927238488000ABD99 /* Stations */ = {
+			isa = PBXGroup;
+			children = (
+				A10E6F0B2721EF7500C17DC4 /* StationsViewController.swift */,
+			);
+			path = Stations;
+			sourceTree = "<group>";
+		};
+		A152BC7C272384AF000ABD99 /* Passengers */ = {
+			isa = PBXGroup;
+			children = (
+				A152BC7A272384AA000ABD99 /* PassengersViewController.swift */,
+			);
+			path = Passengers;
+			sourceTree = "<group>";
+		};
 		A1A6E0302721820700689ADF = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +177,8 @@
 				A1A6E0522721820D00689ADF /* RyanairTests */,
 				A1A6E05D2721820D00689ADF /* RyanairUITests */,
 				A1A6E03A2721820700689ADF /* Products */,
+				58F3E9B5196184BF5BF3576E /* Pods */,
+				7D62944FC80071726ADFBDC4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +197,7 @@
 			children = (
 				A1A6E03C2721820700689ADF /* AppDelegate.swift */,
 				A1A6E0452721820C00689ADF /* Assets.xcassets */,
+				A1BA7B772722D7B90069C832 /* Extensions */,
 				A1A6E04A2721820C00689ADF /* Info.plist */,
 				A1A6E0472721820C00689ADF /* LaunchScreen.storyboard */,
 				A1A6E0422721820700689ADF /* Main.storyboard */,
@@ -143,6 +232,11 @@
 		A1A6E06C2721827800689ADF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A1459EF52721B3370047F9EF /* Availability.swift */,
+				A1459EFC2721B44B0047F9EF /* Flight.swift */,
+				A1459EFF2721BCEF0047F9EF /* Stations.swift */,
+				A1459EF72721B3930047F9EF /* Trip.swift */,
+				A1459EFA2721B3FC0047F9EF /* TripDate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,7 +261,10 @@
 		A1A6E06F2721828A00689ADF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				A1A6E0402721820700689ADF /* HomeViewController.swift */,
+				A152BC7227233531000ABD99 /* Calendar */,
+				A152BC782723847D000ABD99 /* Home */,
+				A152BC7927238488000ABD99 /* Stations */,
+				A152BC7C272384AF000ABD99 /* Passengers */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -180,6 +277,14 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		A1BA7B772722D7B90069C832 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A1BA7B782722D8A00069C832 /* UIView.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,9 +292,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A1A6E0632721820D00689ADF /* Build configuration list for PBXNativeTarget "Ryanair" */;
 			buildPhases = (
+				87896B972AA4D0F99D928D5A /* [CP] Check Pods Manifest.lock */,
 				A1A6E0352721820700689ADF /* Sources */,
 				A1A6E0362721820700689ADF /* Frameworks */,
 				A1A6E0372721820700689ADF /* Resources */,
+				63D453CFC5258716A675F72A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,17 +412,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		63D453CFC5258716A675F72A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ryanair/Pods-Ryanair-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ryanair/Pods-Ryanair-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ryanair/Pods-Ryanair-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		87896B972AA4D0F99D928D5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ryanair-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A1A6E0352721820700689ADF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A152BC7127233453000ABD99 /* CalendarViewController.swift in Sources */,
+				A152BC7B272384AA000ABD99 /* PassengersViewController.swift in Sources */,
+				A152BC772723606A000ABD99 /* DateHeader.swift in Sources */,
+				A1459EF62721B3370047F9EF /* Availability.swift in Sources */,
+				A1459F002721BCEF0047F9EF /* Stations.swift in Sources */,
+				A1459EFB2721B3FC0047F9EF /* TripDate.swift in Sources */,
 				A1A6E0412721820700689ADF /* HomeViewController.swift in Sources */,
+				A10E6F0C2721EF7500C17DC4 /* StationsViewController.swift in Sources */,
 				A1A6E03D2721820700689ADF /* AppDelegate.swift in Sources */,
+				A152BC7527233556000ABD99 /* DateCell.swift in Sources */,
+				A1459EF82721B3930047F9EF /* Trip.swift in Sources */,
 				A1A6E0732721831900689ADF /* Router.swift in Sources */,
 				A1A6E078272191A100689ADF /* Services.swift in Sources */,
 				A1A6E071272182CE00689ADF /* ABRequest.swift in Sources */,
+				A1BA7B792722D8A10069C832 /* UIView.swift in Sources */,
 				A1A6E03F2721820700689ADF /* SceneDelegate.swift in Sources */,
+				A1459EFD2721B44B0047F9EF /* Flight.swift in Sources */,
 				A1A6E0762721838800689ADF /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +649,7 @@
 		};
 		A1A6E0642721820D00689ADF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 484EC09CBB180E7E2571A21A /* Pods-Ryanair.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -508,6 +669,7 @@
 		};
 		A1A6E0652721820D00689ADF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E46667D637E4EF4016E1E2D3 /* Pods-Ryanair.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
