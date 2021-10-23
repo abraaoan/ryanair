@@ -55,4 +55,41 @@ class Utils: NSObject {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.string(from: date)
     }
+    
+    public static func getDayMonth(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM"
+        return formatter.string(from: date)
+    }
+    
+    public static func getWeekName(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: date)
+    }
+    
+    public static func getDateAPIFormat(_ date: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
+        return formatter.date(from: date) ?? Date()
+    }
+    
+    public static func getDateRequestFormat(_ date: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter.date(from: date) ?? Date()
+    }
+    
+    public static func dateIsByDays(date: Date, isEqual to:Date) -> Bool {
+        let calendar = Calendar.current
+        let dayOrder = calendar.compare(date, to: to, toGranularity: .day)
+        let monthOrder = calendar.compare(date, to: to, toGranularity: .month)
+        return dayOrder == .orderedSame && monthOrder == .orderedSame
+    }
+    
+    public static func getTimeFromDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: date)
+    }
 }

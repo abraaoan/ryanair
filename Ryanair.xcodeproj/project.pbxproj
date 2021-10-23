@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A106995227243D8500CF9C55 /* HomeCollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106995127243D8500CF9C55 /* HomeCollectionViewExtension.swift */; };
+		A106995427243DD600CF9C55 /* HomeTableviewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A106995327243DD600CF9C55 /* HomeTableviewExtension.swift */; };
+		A1069957272441AB00CF9C55 /* HomeDateCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1069956272441AB00CF9C55 /* HomeDateCollectionViewCell.swift */; };
+		A1069959272442DF00CF9C55 /* TripDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1069958272442DF00CF9C55 /* TripDateViewModel.swift */; };
 		A10E6F0C2721EF7500C17DC4 /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10E6F0B2721EF7500C17DC4 /* StationsViewController.swift */; };
+		A11D7DC62724517C00926330 /* FlightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D7DC52724517C00926330 /* FlightViewModel.swift */; };
+		A11D7DC82724599D00926330 /* HomeFilghtsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11D7DC72724599D00926330 /* HomeFilghtsTableViewCell.swift */; };
 		A1459EF62721B3370047F9EF /* Availability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1459EF52721B3370047F9EF /* Availability.swift */; };
 		A1459EF82721B3930047F9EF /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1459EF72721B3930047F9EF /* Trip.swift */; };
 		A1459EFB2721B3FC0047F9EF /* TripDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1459EFA2721B3FC0047F9EF /* TripDate.swift */; };
@@ -53,7 +59,13 @@
 /* Begin PBXFileReference section */
 		0B63519871F6AFFACEF2919E /* Pods_Ryanair.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ryanair.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		484EC09CBB180E7E2571A21A /* Pods-Ryanair.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ryanair.debug.xcconfig"; path = "Target Support Files/Pods-Ryanair/Pods-Ryanair.debug.xcconfig"; sourceTree = "<group>"; };
+		A106995127243D8500CF9C55 /* HomeCollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewExtension.swift; sourceTree = "<group>"; };
+		A106995327243DD600CF9C55 /* HomeTableviewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableviewExtension.swift; sourceTree = "<group>"; };
+		A1069956272441AB00CF9C55 /* HomeDateCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDateCollectionViewCell.swift; sourceTree = "<group>"; };
+		A1069958272442DF00CF9C55 /* TripDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDateViewModel.swift; sourceTree = "<group>"; };
 		A10E6F0B2721EF7500C17DC4 /* StationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
+		A11D7DC52724517C00926330 /* FlightViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightViewModel.swift; sourceTree = "<group>"; };
+		A11D7DC72724599D00926330 /* HomeFilghtsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFilghtsTableViewCell.swift; sourceTree = "<group>"; };
 		A1459EF52721B3370047F9EF /* Availability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Availability.swift; sourceTree = "<group>"; };
 		A1459EF72721B3930047F9EF /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		A1459EFA2721B3FC0047F9EF /* TripDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDate.swift; sourceTree = "<group>"; };
@@ -128,6 +140,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A106994F27243D6700CF9C55 /* CollecitonView */ = {
+			isa = PBXGroup;
+			children = (
+				A10699552724418900CF9C55 /* Cells */,
+				A106995127243D8500CF9C55 /* HomeCollectionViewExtension.swift */,
+			);
+			path = CollecitonView;
+			sourceTree = "<group>";
+		};
+		A106995027243D6E00CF9C55 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				A11D7DC9272459A500926330 /* Cells */,
+				A106995327243DD600CF9C55 /* HomeTableviewExtension.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		A10699552724418900CF9C55 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A1069956272441AB00CF9C55 /* HomeDateCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A11D7DC9272459A500926330 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A11D7DC72724599D00926330 /* HomeFilghtsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		A152BC7227233531000ABD99 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +195,8 @@
 		A152BC782723847D000ABD99 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				A106995027243D6E00CF9C55 /* TableView */,
+				A106994F27243D6700CF9C55 /* CollecitonView */,
 				A1A6E0402721820700689ADF /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -254,6 +302,8 @@
 		A1A6E06E2721828500689ADF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A1069958272442DF00CF9C55 /* TripDateViewModel.swift */,
+				A11D7DC52724517C00926330 /* FlightViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -466,16 +516,22 @@
 				A1459F002721BCEF0047F9EF /* Stations.swift in Sources */,
 				A1459EFB2721B3FC0047F9EF /* TripDate.swift in Sources */,
 				A1A6E0412721820700689ADF /* HomeViewController.swift in Sources */,
+				A1069959272442DF00CF9C55 /* TripDateViewModel.swift in Sources */,
 				A10E6F0C2721EF7500C17DC4 /* StationsViewController.swift in Sources */,
 				A1A6E03D2721820700689ADF /* AppDelegate.swift in Sources */,
 				A152BC7527233556000ABD99 /* DateCell.swift in Sources */,
 				A1459EF82721B3930047F9EF /* Trip.swift in Sources */,
 				A1A6E0732721831900689ADF /* Router.swift in Sources */,
+				A106995427243DD600CF9C55 /* HomeTableviewExtension.swift in Sources */,
 				A1A6E078272191A100689ADF /* Services.swift in Sources */,
+				A11D7DC62724517C00926330 /* FlightViewModel.swift in Sources */,
 				A1A6E071272182CE00689ADF /* ABRequest.swift in Sources */,
+				A106995227243D8500CF9C55 /* HomeCollectionViewExtension.swift in Sources */,
 				A1BA7B792722D8A10069C832 /* UIView.swift in Sources */,
+				A1069957272441AB00CF9C55 /* HomeDateCollectionViewCell.swift in Sources */,
 				A1A6E03F2721820700689ADF /* SceneDelegate.swift in Sources */,
 				A1459EFD2721B44B0047F9EF /* Flight.swift in Sources */,
+				A11D7DC82724599D00926330 /* HomeFilghtsTableViewCell.swift in Sources */,
 				A1A6E0762721838800689ADF /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

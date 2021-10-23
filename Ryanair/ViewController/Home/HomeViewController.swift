@@ -17,6 +17,23 @@ class HomeViewController: UIViewController {
     var teenPassenger: Int = 0
     var childrenPassenger: Int = 0
     
+    var tripDates: [TripDateViewModel]? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                self?.collectionView.reloadData()
+            }
+        }
+    }
+    
+    var selectFlights: [FlightViewModel]? {
+        didSet {
+            DispatchQueue.main.async { [weak self] in
+                let index: IndexSet = [0]
+                self?.tableView.reloadSections(index, with: .fade)
+            }
+        }
+    }
+    
     @IBOutlet weak var txtDestination: UITextField!
     @IBOutlet weak var txtOrigin: UITextField!
     @IBOutlet weak var txtDepart: UITextField!
@@ -25,6 +42,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var spinnerView: UIView!
     @IBOutlet weak var formView: UIView!
     @IBOutlet weak var btnSerach: UIButton!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     var formHeightConstraint: NSLayoutConstraint!
 
@@ -37,6 +56,7 @@ class HomeViewController: UIViewController {
         
         //
         self.spinnerView.isHidden = false
+        self.collectionView.isHidden = true
         
         //
         Services.getStations { [weak self] stations in
@@ -50,6 +70,9 @@ class HomeViewController: UIViewController {
         //
         self.btnSerach.alpha = 0.5
         self.btnSerach.isEnabled = false
+        
+        //
+        self.tableView.tableFooterView = UIView(frame: .zero)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -101,6 +124,10 @@ class HomeViewController: UIViewController {
         
     }
     
+    func clearSelection() {
+        self.tripDates?.forEach({$0.isSelected = false})
+    }
+    
     // - MARK: Actions
     
     @IBAction func selectFrom() {
@@ -134,6 +161,11 @@ class HomeViewController: UIViewController {
         let teen = "\(teenPassenger)"
         let chd = "\(childrenPassenger)"
         
+        self.spinnerView.isHidden = false
+        self.btnSerach.alpha = 0.8
+        self.btnSerach.setTitle("Searching...", for: .normal)
+        self.btnSerach.isHidden = false
+        
         //
         Services.searchAvailability(origin: origin,
                                     destination: destination,
@@ -142,9 +174,43 @@ class HomeViewController: UIViewController {
                                     adt: adt,
                                     teen: teen,
                                     chd: chd) { trips in
-            trips?.forEach({ print($0.dates) })
+            
+            // Depart
+            if let firstTrip = trips?.first {
+                self.tripDates = firstTrip.dates.map({
+                    let dateOut = self.currentDates?.first ?? Date()
+                    let tDate = Utils.getDateAPIFormat($0.dateOut)
+                    
+                    let viewModel = TripDateViewModel(tripDate: $0)
+                    if Utils.dateIsByDays(date: dateOut, isEqual: tDate) {
+                        viewModel.isSelected = true
+                        self.selectFlights = $0.flights.map({FlightViewModel(flight: $0)})
+                    }
+                    return viewModel
+                })
+            }
+            
+            DispatchQueue.main.async { [weak self] in
+                self?.spinnerView.isHidden = true
+                
+                self?.btnSerach.alpha = 1
+                self?.btnSerach.setTitle("Search", for: .normal)
+                self?.btnSerach.isEnabled = true
+                
+                //
+                self?.collectionView.isHidden = false
+                guard let selectedDate = self?.tripDates?.first(where: { $0.isSelected }) else { return }
+                guard let index = self?.tripDates?.firstIndex(of: selectedDate) else { return }
+                let indexPath = IndexPath(row: index, section: 0)
+                
+                self?.collectionView.scrollToItem(at: indexPath,
+                                                  at: .centeredHorizontally,
+                                                  animated: true)
+                
+                
+                
+            }
         }
-        
     }
     
     // - MARK: Navigation

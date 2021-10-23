@@ -21,7 +21,7 @@ struct RegularFare: Codable {
 
 struct Fare: Codable {
     let type: String?
-    let amount: String?
+    let amount: Double?
     let count: String?
     let hasDiscount: Bool?
     let publishedFare: Float?
@@ -35,7 +35,7 @@ struct Fare: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         self.type = try? values.decode(String.self, forKey: .type)
-        self.amount = try? values.decode(String.self, forKey: .amount)
+        self.amount = try? values.decode(Double.self, forKey: .amount)
         self.count = try? values.decode(String.self, forKey: .count)
         self.hasDiscount = try? values.decode(Bool.self, forKey: .hasDiscount)
         self.publishedFare = try? values.decode(Float.self, forKey: .publishedFare)
