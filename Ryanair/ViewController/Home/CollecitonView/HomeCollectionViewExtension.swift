@@ -46,6 +46,7 @@ extension HomeViewController: UICollectionViewDelegate {
         self.clearSelection()
         tripDate.isSelected = true
         self.collectionView.reloadData()
+        self.scrollDatesToMiddle()
         
     }
     

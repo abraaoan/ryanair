@@ -56,7 +56,6 @@ class HomeViewController: UIViewController {
         
         //
         self.spinnerView.isHidden = false
-        self.collectionView.isHidden = true
         
         //
         Services.getStations { [weak self] stations in
@@ -128,6 +127,41 @@ class HomeViewController: UIViewController {
         self.tripDates?.forEach({$0.isSelected = false})
     }
     
+    func setSearchButtonState(_ isSearching: Bool) {
+        
+        self.spinnerView.isHidden = !isSearching
+        self.btnSerach.alpha = isSearching ? 0.8 : 1
+        self.btnSerach.setTitle(isSearching ? "Searching..." : "Search",
+                                for: .normal)
+        self.btnSerach.isEnabled = !isSearching
+    }
+    
+    func scrollDatesToMiddle() {
+        
+        guard let selectedDate = self.tripDates?.first(where: { $0.isSelected }) else { return }
+        guard let index = self.tripDates?.firstIndex(of: selectedDate) else { return }
+        let indexPath = IndexPath(row: index, section: 0)
+        
+        self.collectionView.scrollToItem(at: indexPath,
+                                          at: .centeredHorizontally,
+                                          animated: true)
+        
+    }
+    
+    func getTripDates(trip: Trip) -> [TripDateViewModel] {
+        return trip.dates.map({
+            let dateOut = self.currentDates?.first ?? Date()
+            let tDate = Utils.getDateAPIFormat($0.dateOut)
+            
+            let viewModel = TripDateViewModel(tripDate: $0)
+            if Utils.dateIsByDays(date: dateOut, isEqual: tDate) {
+                viewModel.isSelected = true
+                self.selectFlights = $0.flights.map({FlightViewModel(flight: $0)})
+            }
+            return viewModel
+        })
+    }
+    
     // - MARK: Actions
     
     @IBAction func selectFrom() {
@@ -155,16 +189,11 @@ class HomeViewController: UIViewController {
         
         let dateout = Utils.getStringDateFormatedForURL(dateoutRaw)
         let datein = Utils.getStringDateFormatedForURL(dateInRaw)
-        
-        // Must get from new view
         let adt = "\(adultPassenger)"
         let teen = "\(teenPassenger)"
         let chd = "\(childrenPassenger)"
         
-        self.spinnerView.isHidden = false
-        self.btnSerach.alpha = 0.8
-        self.btnSerach.setTitle("Searching...", for: .normal)
-        self.btnSerach.isHidden = false
+        self.setSearchButtonState(true)
         
         //
         Services.searchAvailability(origin: origin,
@@ -177,38 +206,12 @@ class HomeViewController: UIViewController {
             
             // Depart
             if let firstTrip = trips?.first {
-                self.tripDates = firstTrip.dates.map({
-                    let dateOut = self.currentDates?.first ?? Date()
-                    let tDate = Utils.getDateAPIFormat($0.dateOut)
-                    
-                    let viewModel = TripDateViewModel(tripDate: $0)
-                    if Utils.dateIsByDays(date: dateOut, isEqual: tDate) {
-                        viewModel.isSelected = true
-                        self.selectFlights = $0.flights.map({FlightViewModel(flight: $0)})
-                    }
-                    return viewModel
-                })
+                self.tripDates = self.getTripDates(trip: firstTrip)
             }
             
             DispatchQueue.main.async { [weak self] in
-                self?.spinnerView.isHidden = true
-                
-                self?.btnSerach.alpha = 1
-                self?.btnSerach.setTitle("Search", for: .normal)
-                self?.btnSerach.isEnabled = true
-                
-                //
-                self?.collectionView.isHidden = false
-                guard let selectedDate = self?.tripDates?.first(where: { $0.isSelected }) else { return }
-                guard let index = self?.tripDates?.firstIndex(of: selectedDate) else { return }
-                let indexPath = IndexPath(row: index, section: 0)
-                
-                self?.collectionView.scrollToItem(at: indexPath,
-                                                  at: .centeredHorizontally,
-                                                  animated: true)
-                
-                
-                
+                self?.setSearchButtonState(false)
+                self?.scrollDatesToMiddle()
             }
         }
     }
