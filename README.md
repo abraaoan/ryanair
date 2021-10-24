@@ -1,5 +1,5 @@
 # Ryanair Challenge
-Swift mvvm with PokeApi
+Swift MVVM and a lot of challenges.
 
 # The Challenge
 1. Create a form where the user can make an availability request
